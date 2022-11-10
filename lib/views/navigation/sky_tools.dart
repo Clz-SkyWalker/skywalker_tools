@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skywalker_tools/app/blocs/global/global_bloc.dart';
-import 'package:skywalker_tools/app/res/const/const_size.dart';
+import 'package:skywalker_tools/app/res/const/const_system.dart';
 import 'package:skywalker_tools/app/router/router_manager.dart';
 import 'package:skywalker_tools/app/utils/util_system.dart';
 
@@ -33,12 +33,12 @@ class SkyTools extends StatelessWidget {
   Size getScreenSize() {
     if (UtilSystem.isPC()) {
       return const Size(
-        ConstSize.desktopScreenWidth,
-        ConstSize.desktopScreenHeight,
+        ConstSystem.desktopScreenWidth,
+        ConstSystem.desktopScreenHeight,
       );
     } else {
       return const Size(
-          ConstSize.mobileScreenWidth, ConstSize.mobileScreenHeight,);
+          ConstSystem.mobileScreenWidth, ConstSystem.mobileScreenHeight,);
     }
   }
 }

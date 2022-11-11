@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skywalker_tools/app/blocs/global/global_bloc.dart';
-import 'package:skywalker_tools/app/res/const/const_system.dart';
+import 'package:skywalker_tools/app/res/export.dart';
 import 'package:skywalker_tools/app/router/router_manager.dart';
 import 'package:skywalker_tools/app/utils/util_system.dart';
 
@@ -11,7 +11,7 @@ class SkyTools extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = getScreenSize();
+    final size = UtilSystem.getScreenSize();
     return ScreenUtilInit(
       designSize: size,
       minTextAdapt: true,
@@ -21,24 +21,14 @@ class SkyTools extends StatelessWidget {
           builder: (_, state) {
             return MaterialApp.router(
               debugShowCheckedModeBanner: false,
-              title: 'Sky tools',
+              title: ConstSystem.title,
               routerConfig: RouterManager.router,
+              // del: S.delegate,
+              theme: IThemeManager.createTheme(ThemeLight()),
             );
           },
         );
       },
     );
-  }
-
-  Size getScreenSize() {
-    if (UtilSystem.isPC()) {
-      return const Size(
-        ConstSystem.desktopScreenWidth,
-        ConstSystem.desktopScreenHeight,
-      );
-    } else {
-      return const Size(
-          ConstSystem.mobileScreenWidth, ConstSystem.mobileScreenHeight,);
-    }
   }
 }

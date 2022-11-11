@@ -29,6 +29,10 @@
 ## https://dart.dev/guides/language/analysis-options
 
 include: package:very_good_analysis/analysis_options.3.1.0.yaml
+analyzer:
+  exclude:
+    - lib/app/res/translation/generated/
+
 linter:
   rules:
     sort_pub_dependencies: false

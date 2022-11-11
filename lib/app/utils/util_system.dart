@@ -30,4 +30,18 @@ class UtilSystem {
     }
     return false;
   }
+
+  static Size getScreenSize() {
+    if (UtilSystem.isPC()) {
+      return const Size(
+        ConstSystem.desktopScreenWidth,
+        ConstSystem.desktopScreenHeight,
+      );
+    } else {
+      return const Size(
+        ConstSystem.mobileScreenWidth,
+        ConstSystem.mobileScreenHeight,
+      );
+    }
+  }
 }

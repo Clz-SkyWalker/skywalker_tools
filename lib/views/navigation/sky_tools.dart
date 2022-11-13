@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skywalker_tools/app/blocs/global/global_bloc.dart';
 import 'package:skywalker_tools/app/res/export.dart';
@@ -23,7 +24,10 @@ class SkyTools extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: ConstSystem.title,
               routerConfig: RouterManager.router,
-              // del: S.delegate,
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+              ],
               theme: IThemeManager.createTheme(ThemeLight()),
             );
           },

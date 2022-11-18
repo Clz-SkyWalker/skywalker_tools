@@ -10,25 +10,37 @@ abstract class ITheme {
 
 abstract class IThemeManager {
   static ThemeData createTheme(ITheme theme) => ThemeData(
-        fontFamily: theme.textTheme.fontFamily,
         textTheme: theme.textTheme.data,
+        colorScheme: ColorScheme(
+          brightness: Brightness.light,
+          primary: theme.colorTheme.primary,
+          onPrimary: theme.colorTheme.onPrimary,
+          secondary: theme.colorTheme.secondary,
+          onSecondary: theme.colorTheme.onSecondary,
+          error: theme.colorTheme.error,
+          onError: theme.colorTheme.onError,
+          background: theme.colorTheme.background,
+          onBackground: theme.colorTheme.onBackground,
+          surface: theme.colorTheme.surface,
+          onSurface: theme.colorTheme.onSurface,
+        ),
       );
 }
 
-class ThemeDark extends ITheme {
-  ThemeDark() {
-    textTheme = TextDark(colorTheme.appBarColor);
-  }
-
-  @override
-  IThemeColor get colorTheme => ColorDark();
-  @override
-  late final IThemeText textTheme;
-}
+// class ThemeDark extends ITheme {
+//   ThemeDark() {
+//     textTheme = TextDark(colorTheme.primaryColor);
+//   }
+//
+//   @override
+//   IThemeColor get colorTheme => ColorDark();
+//   @override
+//   late final IThemeText textTheme;
+// }
 
 class ThemeLight extends ITheme {
   ThemeLight() {
-    textTheme = TextLight(colorTheme.appBarColor);
+    textTheme = TextLight(colorTheme.primary);
   }
 
   @override

@@ -1,14 +1,46 @@
 part of '../theme_color.dart';
 
-class ColorLight with _appColors implements IThemeColor {
+class ColorLight implements IThemeColor {
   ColorLight() {
-    appBarColor = white;
-    tabBarColor = green;
+    primary = ColorName.lightPrimary;
+    onPrimary = ColorName.lightOnPrimary;
+    secondary = ColorName.lightSecondary;
+    onSecondary = ColorName.lightOnSecondary;
+    background = ColorName.lightBackground;
+    onBackground = ColorName.lightOnBackground;
+    surface = ColorName.lightSurface;
+    onSurface = ColorName.lightOnSurface;
+    error = ColorName.lightError;
+    onError = ColorName.lightOnError;
   }
 
   @override
-  Color? appBarColor;
+  late Color background;
 
   @override
-  Color? tabBarColor;
+  late Color onBackground;
+
+  @override
+  late Color onPrimary;
+
+  @override
+  late Color onSurface;
+
+  @override
+  late Color primary;
+
+  @override
+  late Color surface;
+
+  @override
+  late Color error;
+
+  @override
+  late Color onError;
+
+  @override
+  late Color onSecondary;
+
+  @override
+  late Color secondary;
 }
